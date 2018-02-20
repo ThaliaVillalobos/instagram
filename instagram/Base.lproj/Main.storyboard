@@ -36,28 +36,35 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6E-hi-cD2">
-                                <rect key="frame" x="50" y="297" width="117" height="30"/>
+                                <rect key="frame" x="50" y="286" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dMt-oC-L5R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n5-Ou-ygK">
-                                <rect key="frame" x="200" y="297" width="123" height="30"/>
+                                <rect key="frame" x="200" y="286" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KO3-gZ-Iof"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RP-5E-HwG">
-                                <rect key="frame" x="122" y="72" width="131" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="H0g-Jd-OUc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="title-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pu2-a7-GiS">
+                                <rect key="frame" x="6" y="13" width="369" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -111,21 +118,11 @@
                                 <state key="normal" title="Logout"/>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="j6X-wP-nnE">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qeH-WC-0mb">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <connections>
-                                <segue destination="Uwo-8n-HAi" kind="modal" id="DI4-dw-StN"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="984.55772113943033"/>
+            <point key="canvasLocation" x="-617" y="985"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VBL-xJ-mHC">
@@ -173,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGg-Vu-7SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237.5999999999999" y="984.55772113943033"/>
+            <point key="canvasLocation" x="1718" y="985"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dXw-PI-FgO">
@@ -192,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzR-m1-FUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4409" y="985"/>
+            <point key="canvasLocation" x="4078" y="985"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wF2-l9-XEM">
@@ -204,19 +201,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9lg-HH-hEj" kind="relationship" relationship="viewControllers" id="SNh-2R-5sN"/>
                         <segue destination="k2u-EA-ndQ" kind="relationship" relationship="viewControllers" id="EC7-I2-9C5"/>
+                        <segue destination="Uwo-8n-HAi" kind="relationship" relationship="viewControllers" id="z5n-Fg-IMw"/>
+                        <segue destination="9lg-HH-hEj" kind="relationship" relationship="viewControllers" id="SNh-2R-5sN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoR-cf-wYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="124"/>
         </scene>
-        <!--Item 2-->
+        <!--Home-->
         <scene sceneID="L1S-bY-Mdk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k2u-EA-ndQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="mkJ-bG-yfK"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" id="mkJ-bG-yfK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ero-Vy-fG8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -229,12 +227,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6D-Fv-WCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551.20000000000005" y="984.55772113943033"/>
+            <point key="canvasLocation" x="-1479" y="985"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Capture-->
         <scene sceneID="3cj-bx-6nX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uwo-8n-HAi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" id="K3S-8H-vyV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gc2-kN-UeT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -247,13 +246,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEJ-yp-TTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="985"/>
+            <point key="canvasLocation" x="926" y="985"/>
         </scene>
-        <!--Item 1-->
+        <!--Profile-->
         <scene sceneID="mN8-Fk-gxb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9lg-HH-hEj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ki4-fx-82K"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="ki4-fx-82K"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BEp-Ad-NIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -266,7 +265,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipV-b6-pRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3460" y="985"/>
+            <point key="canvasLocation" x="3180" y="985"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="download" width="369" height="136"/>
+        <image name="feed_tab" width="25" height="25"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
+        <image name="title-1" width="337" height="135"/>
+    </resources>
 </document>
