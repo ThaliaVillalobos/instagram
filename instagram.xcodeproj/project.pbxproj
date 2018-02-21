@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870ABAA9203E34C200956A7C /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870ABAA8203E34C200956A7C /* LogOutViewController.swift */; };
 		871BA9AA203CC95900D341F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871BA9A9203CC95900D341F4 /* HomeViewController.swift */; };
 		871BA9AC203CE10400D341F4 /* ImportImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871BA9AB203CE10400D341F4 /* ImportImageViewController.swift */; };
 		8743642D203BC8E900A14B6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8743642C203BC8E900A14B6D /* LoginViewController.swift */; };
@@ -43,6 +44,7 @@
 		1EEBB784FF387ED84C97ADC2 /* Pods-instagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagramTests/Pods-instagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		2954C98B00AB13884866DF05 /* Pods_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0D8FBDE4010A73FE86B0B4 /* Pods_instagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		870ABAA8203E34C200956A7C /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		871BA9A9203CC95900D341F4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		871BA9AB203CE10400D341F4 /* ImportImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportImageViewController.swift; sourceTree = "<group>"; };
 		8743642C203BC8E900A14B6D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				8743642C203BC8E900A14B6D /* LoginViewController.swift */,
 				871BA9A9203CC95900D341F4 /* HomeViewController.swift */,
 				871BA9AB203CE10400D341F4 /* ImportImageViewController.swift */,
+				870ABAA8203E34C200956A7C /* LogOutViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870ABAA9203E34C200956A7C /* LogOutViewController.swift in Sources */,
 				8743642D203BC8E900A14B6D /* LoginViewController.swift in Sources */,
 				87E4C810203B8FE500548DA4 /* ViewController.swift in Sources */,
 				871BA9AC203CE10400D341F4 /* ImportImageViewController.swift in Sources */,

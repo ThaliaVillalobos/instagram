@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="BYZ-38-t0r" customClass="LoginViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -68,6 +68,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UfM-0p-tVa"/>
                     <connections>
                         <outlet property="passwordField" destination="HlB-3n-bBZ" id="Mx6-G3-MIS"/>
                         <outlet property="usernameField" destination="RAq-tS-ofX" id="rZ4-gs-ZkA"/>
@@ -165,7 +166,6 @@
                             </button>
                             <connections>
                                 <action selector="backHome:" destination="bWi-Wh-uuY" id="8Pc-KT-X8V"/>
-                                <segue destination="mAA-HM-Zma" kind="showDetail" identifier="goHome" action="showViewController:sender:" id="06E-mr-F1G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,7 +187,7 @@
         <!--Profile-->
         <scene sceneID="dXw-PI-FgO">
             <objects>
-                <viewController id="cni-YN-Txc" sceneMemberID="viewController">
+                <viewController id="cni-YN-Txc" customClass="LogOutViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E6R-rJ-81h"/>
                         <viewControllerLayoutGuide type="bottom" id="BKM-y4-TiG"/>
@@ -201,6 +201,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="userLogOut:" destination="cni-YN-Txc" eventType="touchUpInside" id="j3q-xi-Dtb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,7 +301,4 @@
         <image name="profile_tab" width="25" height="25"/>
         <image name="title-1" width="337" height="135"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="06E-mr-F1G"/>
-    </inferredMetricsTieBreakers>
 </document>

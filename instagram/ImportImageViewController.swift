@@ -57,7 +57,9 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             posts.saveInBackground(block: { (sccess:Bool, error: NSError?) -> Void in
                 if error == nil{
                     //create an image data
+                    
                     let imageData = UIImagePNGRepresentation(self.userImageView.image!)
+                    print("image check point")
                     let parseImageFile = PFFile(name:"uploaded_image.png", data: imageData!)
                     posts["imageFile"] = parseImageFile
                     posts.saveInBackground(block: { (sccess:Bool, error: NSError?) -> Void in
@@ -79,6 +81,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            print("before selecting image")
             userImageView.image = image
         }else{
             print("Something went wrong")
