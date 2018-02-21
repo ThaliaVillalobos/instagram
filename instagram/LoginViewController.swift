@@ -17,8 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        PFUser.logOut()
     }
 
     override func didReceiveMemoryWarning() {
