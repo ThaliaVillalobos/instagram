@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="244" id="6Xl-Ra-nlU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="244" id="6Xl-Ra-nlU">
                                 <rect key="frame" x="0.0" y="28" width="375" height="244"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Xl-Ra-nlU" id="NDk-mZ-XIQ">
@@ -112,6 +112,9 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home Feed" id="YUC-yz-hgc"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ql4-98-zmE" id="PJR-Dn-rME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

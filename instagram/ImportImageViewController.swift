@@ -6,9 +6,6 @@
 //  Copyright © 2018 Thalia Villalobos. All rights reserved.
 //
 
-//************Fix image, does not display in database*************
-
-
 import UIKit
 import Parse
 
