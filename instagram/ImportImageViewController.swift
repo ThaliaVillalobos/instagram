@@ -16,12 +16,10 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var capationTextField: UITextField!
+    var window: UIWindow?
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +27,7 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
+    //Allow user to click on the image to select a picture
     @IBAction func uploadImage(_ sender: AnyObject) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -54,31 +53,21 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
             let posts = PFObject(className: "Posts")
             posts["imageText"] = imageText
             posts["user"] = PFUser.current()
-            posts.saveInBackground(block: { (sccess:Bool, error: NSError?) -> Void in
-                if error == nil{
-                    //create an image data
-                    
-                    let imageData = UIImagePNGRepresentation(self.userImageView.image!)
-                    print("image check point")
-                    let parseImageFile = PFFile(name:"uploaded_image.png", data: imageData!)
-                    posts["imageFile"] = parseImageFile
-                    posts.saveInBackground(block: { (sccess:Bool, error: NSError?) -> Void in
-                        if error == nil{
-                            print ("data uploaded")
-                        }else{
-                            print("error")
-                        }
-                    } as? PFBooleanResultBlock)
-                }
-            } as? PFBooleanResultBlock)
+            
+            let imageData = UIImagePNGRepresentation(self.userImageView.image!)
+            let parseImageFile = PFFile(name:"uploaded_image.png", data: imageData!)
+
+            posts["imageFile"] = parseImageFile
+            posts.saveInBackground()
+
+            performSegue(withIdentifier: "backHome", sender: nil)
         }
     }
 
-    @IBAction func backHome(_ sender: AnyObject) {
-        performSegue(withIdentifier: "goHome", sender: self)
-    }
     
+   
     
+    //allow to select from photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             print("before selecting image")

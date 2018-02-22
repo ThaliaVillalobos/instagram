@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Instagram"
@@ -26,12 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+        // Override point for customization after application launch.
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "homePage")
+        }
         NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
             print("Logout notification received")
             // TODO: Logout the User
             // TODO: Load and show the login view controller
             self.logOut()
         }
+        
         
         
         return true
@@ -51,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
     }
+    
+
 
 
     func applicationWillResignActive(_ application: UIApplication) {
