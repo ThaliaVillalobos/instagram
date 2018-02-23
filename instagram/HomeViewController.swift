@@ -10,18 +10,30 @@ import UIKit
 import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource {
-
   
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var postImage: UIImageView!
     
+    var imageFiles : [PFFile]! = []
+    var imageText : [String]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
         tableView.dataSource = self
+        
+        let query = PFQuery(className: "Posts")
+        query.order(byDescending: "createdAt")
+        query.findObjectsInBackground { (posts: [PFObject]?, Error) in
+            for post in posts!{
+                //print (post["imageFile"])
+               //print (post["imageText"])
+
+              self.imageFiles.append(post["imageFile"] as! PFFile)
+              self.imageText.append(post["imageText"] as! String)
+            }
+            print(self.imageFiles.count)
+            self.tableView.reloadData()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,11 +42,14 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return imageFiles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
+        cell.imageTextLabel.text = imageText[indexPath.row]
+        
         return cell
     }
     

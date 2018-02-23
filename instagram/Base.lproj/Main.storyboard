@@ -82,13 +82,14 @@
         <!--Home Feed-->
         <scene sceneID="d1C-Qi-q9g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="homeFeed" id="mAA-HM-Zma" customClass="HomeViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="244" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ql4-98-zmE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="244" id="6Xl-Ra-nlU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="244" id="6Xl-Ra-nlU" customClass="PostCell" customModule="instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="244"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Xl-Ra-nlU" id="NDk-mZ-XIQ">
@@ -108,15 +109,22 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="Uql-9Z-YZr" id="ovm-ei-wFF"/>
+                                    <outlet property="imageTextLabel" destination="oU6-Ay-2x2" id="Mcm-D2-C9u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mAA-HM-Zma" id="MyL-PE-PqJ"/>
+                            <outlet property="delegate" destination="mAA-HM-Zma" id="K3I-W2-zJh"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home Feed" id="YUC-yz-hgc"/>
                     <connections>
                         <outlet property="tableView" destination="Ql4-98-zmE" id="PJR-Dn-rME"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-618.39999999999998" y="984.55772113943033"/>
         </scene>
