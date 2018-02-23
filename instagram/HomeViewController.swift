@@ -50,6 +50,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         cell.imageTextLabel.text = imageText[indexPath.row]
         
+        self.imageFiles[indexPath.row].getDataInBackground({ (imageData: Data?, error: Error?) -> Void in
+            let image = UIImage(data: imageData!)
+            if image != nil {
+                cell.cellImage.image = image
+            }
+        })
+        
         return cell
     }
     
