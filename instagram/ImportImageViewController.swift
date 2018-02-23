@@ -62,11 +62,22 @@ class ImportImageViewController: UIViewController, UINavigationControllerDelegat
     }
 
     
-   
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+ let resizeImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: newSize.width, height:newSize.height)))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
     
     //allow to select from photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+        if var image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            image = resize(image: image, newSize: CGSize(width:1000, height:1000))
             print("before selecting image")
             userImageView.image = image
         }else{
