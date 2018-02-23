@@ -82,18 +82,17 @@
         <!--Home Feed-->
         <scene sceneID="d1C-Qi-q9g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="homeFeed" id="mAA-HM-Zma" customClass="HomeViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="244" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ql4-98-zmE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="244" id="6Xl-Ra-nlU" customClass="PostCell" customModule="instagram" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="244" id="6Xl-Ra-nlU" customClass="PostCell" customModule="instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="244"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Xl-Ra-nlU" id="NDk-mZ-XIQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="243.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uql-9Z-YZr">
@@ -112,6 +111,7 @@
                                 <connections>
                                     <outlet property="cellImage" destination="Uql-9Z-YZr" id="ovm-ei-wFF"/>
                                     <outlet property="imageTextLabel" destination="oU6-Ay-2x2" id="Mcm-D2-C9u"/>
+                                    <segue destination="ax5-Uz-qfg" kind="push" id="sNq-N3-SuD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -125,6 +125,7 @@
                         <outlet property="tableView" destination="Ql4-98-zmE" id="PJR-Dn-rME"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8k-ix-X6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-618.39999999999998" y="984.55772113943033"/>
         </scene>
@@ -165,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMh-DX-61m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="989.95502248875573"/>
+            <point key="canvasLocation" x="108" y="985"/>
         </scene>
         <!--Import Image View Controller-->
         <scene sceneID="VBL-xJ-mHC">

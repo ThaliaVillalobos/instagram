@@ -15,26 +15,44 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     var imageFiles : [PFFile]! = []
     var imageText : [String]! = []
+    var refreshControl: UIRefreshControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        tableView.dataSource = self
+        fetchPosts()
+        
+    }
+    
+    func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        imageText = []
+        imageFiles = []
+        fetchPosts()
+    }
+    
+    func fetchPosts(){
         let query = PFQuery(className: "Posts")
         query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (posts: [PFObject]?, Error) in
             for post in posts!{
                 //print (post["imageFile"])
-               //print (post["imageText"])
-
-              self.imageFiles.append(post["imageFile"] as! PFFile)
-              self.imageText.append(post["imageText"] as! String)
+                //print (post["imageText"])
+                
+                self.imageFiles.append(post["imageFile"] as! PFFile)
+                self.imageText.append(post["imageText"] as! String)
             }
             print(self.imageFiles.count)
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+            
         }
-        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
