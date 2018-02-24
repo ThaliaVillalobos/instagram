@@ -15,7 +15,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     var imageFiles : [PFFile]! = []
     var imageText : [String]! = []
+    var imageDate : [String]! = []
+    
     var refreshControl: UIRefreshControl!
+    
     
     
     override func viewDidLoad() {
@@ -32,24 +35,38 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func didPullToRefresh(_ refreshControl: UIRefreshControl){
         imageText = []
         imageFiles = []
+        imageDate = []
         fetchPosts()
     }
     
     func fetchPosts(){
         let query = PFQuery(className: "Posts")
-        query.order(byDescending: "createdAt")
+        query.order(byDescending: "_created_at")
         query.findObjectsInBackground { (posts: [PFObject]?, Error) in
             for post in posts!{
                 //print (post["imageFile"])
                 //print (post["imageText"])
-                
+                //print(post.createdAt!.description)
+
                 self.imageFiles.append(post["imageFile"] as! PFFile)
                 self.imageText.append(post["imageText"] as! String)
+                self.imageDate.append(post.createdAt!.description)
             }
             print(self.imageFiles.count)
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+           let posts = imageText[indexPath.row]
+           let date = imageDate[indexPath.row]
+           let detailViewController = segue.destination as! DetailViewController
+           detailViewController.posts = posts
+           detailViewController.date = date
         }
     }
     
