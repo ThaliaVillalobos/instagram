@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="ZGA-bl-Ite">
-                                <rect key="frame" x="0.0" y="258" width="375" height="150"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="ZGA-bl-Ite">
+                                <rect key="frame" x="-6" y="270" width="386" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>

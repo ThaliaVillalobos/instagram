@@ -42,6 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func fetchPosts(){
         let query = PFQuery(className: "Posts")
         query.order(byDescending: "_created_at")
+        query.limit = 20
         query.findObjectsInBackground { (posts: [PFObject]?, Error) in
             for post in posts!{
                 //print (post["imageFile"])
